@@ -34,7 +34,7 @@ app.get("/books/", async (request, response) => {
   let jwtToken;
   const authHeader = request.headers["authorization"];
   if (authHeader !== undefined) {
-    jwtToken = authHeader.split("")[1];
+    jwtToken = authHeader.split(" ")[1];
   }
   if (jwtToken === undefined) {
     response.status(401);
